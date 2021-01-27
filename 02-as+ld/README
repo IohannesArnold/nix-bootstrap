@@ -1,0 +1,7 @@
+The order here is a bit tricky, so this README explains.
+1) as-ts-v2.nix runs to compile the stage 2 assembler.
+2) as-v2.nix runs to turn the object file into an executable.
+3) as-ts.nix runs to compile the stage 3 assembler from stage2.
+4) as-v2_5.nix runs to turn the object file into an executable.
+5) ld-ts.nix runs to compile the linker.
+6) ld-v2_5.nix runs to turn the object file into an executable.
