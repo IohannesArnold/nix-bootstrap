@@ -5,3 +5,4 @@ The order here is a bit tricky, so this README explains.
 4) as-v2_5.nix runs to turn the object file into an executable.
 5) ld-ts.nix runs to compile the linker.
 6) ld-v2_5.nix runs to turn the object file into an executable.
+7) default.nix builds both tools from themselves.
