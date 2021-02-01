@@ -5,7 +5,7 @@ derivation {
   args = [ "${ builtins.fetchGit {
     url = "https://github.com/IohannesArnold/hex2asm";
     ref = "master";
-    rev = "3849668f74eb68f65cee070960678eebea78b398";
+    rev = "72b530cdbca1baf84489f03f0d1ff923d219dafd";
   } }/0-unhex/unhex.x" "/nix/store/vz5y20vjvhllbx0p8rz60wrs88x7qxiw-unhex" ];
   preferLocalBuild = true;
   outputHashAlgo = "sha256";

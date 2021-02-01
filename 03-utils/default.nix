@@ -5,7 +5,7 @@ derivation {
   src = builtins.fetchGit {
     url = "https://github.com/IohannesArnold/hex2asm";
     ref = "master";
-    rev = "3849668f74eb68f65cee070960678eebea78b398";
+    rev = "72b530cdbca1baf84489f03f0d1ff923d219dafd";
   };
   as = import ../02-as+ld/as-v2_5.nix;
   ld = import ../02-as+ld/ld-v2_5.nix;
@@ -13,5 +13,5 @@ derivation {
   preferLocalBuild = true;
   outputHashAlgo = "sha256";
   outputHashMode = "recursive";
-  outputHash = "1ii7pai5adi5hpg25xng77d3i290ikcgxf352v1jvz2gjvckhr21";
+  outputHash = "0qcy24cfry5ll5djsknbxwkjjq2zkll32w3ck85pb8alg03w64x8";
 }

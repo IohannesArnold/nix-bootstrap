@@ -13,5 +13,5 @@ derivation {
   preferLocalBuild = true;
   outputHashAlgo = "sha256";
   outputHashMode = "recursive";
-  outputHash = "1vqr4z0fxwhhslp91gpxmkms7m3g8r1grs9zaiwc8frnk464nima";
+  outputHash = "0hi2csqanvq48f21kaar86hxhxlnaqn9i3nh8aic4krm16q7g39g";
 }
