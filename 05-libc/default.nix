@@ -9,10 +9,10 @@ derivation {
   };
   binutils = import ../02-as+ld;
   utils = import ../03-utils;
-  b-compiler = import ../04-b_compiler;
+  bc = import ../04-b_compiler;
   args = [ ./build.sh ];
   preferLocalBuild = true;
   outputHashAlgo = "sha256";
   outputHashMode = "recursive";
-  outputHash = "0cxnrn7lzlg2rmn4zp8zjpqn0k0vp2p3cp5m0fq013j3lq9b6gd0";
+  outputHash = "10g6gsnvr51085jym5gn8pw1zijp9sy1j0b9gz05sdjryrbz8f2y";
 }

@@ -1,18 +1,24 @@
-/nix/store/y5zldx2h2ayr6phhfxc142nxlx1hrcv0-utils/bin/mkdir -p /nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/lib
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./exit.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/exit.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./output.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/output.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./input.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/input.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./malloc.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/malloc.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./signal.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/signal.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./string2.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/string2.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./stdarg.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/stdarg.b
-/nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/bin/bc -S -o ./unistd2.s /nix/store/r9zlh55h2yz1r6163qyh5hszn9cbz3bs-source/3-b_libc/unistd2.b
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./exit.s 
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./output.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./input.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./malloc.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./signal.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./string2.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./stdarg.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/as ./unistd2.s
-/nix/store/17x7h21dw4m07nf5i3hv0lrqlzw5fn64-as+ld/bin/ld -r -o /nix/store/a0n33xdkf2qwqszwn4p89zrj9n8831yj-libc/lib/libc.o ./string.o ./ctype.o ./unistd.o ./char.o ./imath.o ./exit.o ./output.o ./input.o ./malloc.o ./signal.o ./string2.o ./stdarg.o ./unistd2.o
+$utils/bin/mkdir -p $out/lib
+$bc/bin/bc -S -o ./exit.s $src/3-b_libc/exit.b
+$bc/bin/bc -S -o ./output.s $src/3-b_libc/output.b
+$bc/bin/bc -S -o ./input.s $src/3-b_libc/input.b
+$bc/bin/bc -S -o ./malloc.s $src/3-b_libc/malloc.b
+$bc/bin/bc -S -o ./signal.s $src/3-b_libc/signal.b
+$bc/bin/bc -S -o ./string2.s $src/3-b_libc/string2.b
+$bc/bin/bc -S -o ./stdarg.s $src/3-b_libc/stdarg.b
+$bc/bin/bc -S -o ./unistd2.s $src/3-b_libc/unistd2.b
+$binutils/bin/as ./exit.s 
+$binutils/bin/as ./output.s
+$binutils/bin/as ./input.s
+$binutils/bin/as ./malloc.s
+$binutils/bin/as ./signal.s
+$binutils/bin/as ./string2.s
+$binutils/bin/as ./stdarg.s
+$binutils/bin/as ./unistd2.s
+$binutils/bin/as $src/1-asm_libc/string.s  ./string.o
+$binutils/bin/as $src/1-asm_libc/ctype.s  ./ctype.o
+$binutils/bin/as $src/1-asm_libc/unistd.s  ./unistd.o
+$binutils/bin/as $src/1-asm_libc/char.s  ./char.o
+$binutils/bin/as $src/1-asm_libc/imath.s  ./imath.o
+$binutils/bin/as $src/1-asm_libc/crt0.s $out/lib/crt0.o
+$binutils/bin/ld -r -o $out/lib/libc.o ./string.o ./ctype.o ./unistd.o ./char.o ./imath.o ./exit.o ./output.o ./input.o ./malloc.o ./signal.o ./string2.o ./stdarg.o ./unistd2.o
